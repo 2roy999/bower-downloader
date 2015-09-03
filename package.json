@@ -10,7 +10,7 @@
     "bower-registry-client": "^0.3.0",
     "nodegit": "^0.4.1"
   },
-  "bin": "bin/bowerDownload"
+  "bin": "bin/bowerDownload",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
