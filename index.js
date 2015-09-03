@@ -1,7 +1,6 @@
 
 var Promise = require("bluebird");
 var execAsync = Promise.promisifyAll(require('child_process')).execAsync;
-var bowerJson = require('bower-json');
 var BowerRegistry = require('bower-registry-client');
 Promise.promisifyAll(BowerRegistry.prototype);
 var bower = new BowerRegistry({ cache: false });
@@ -28,9 +27,7 @@ function downloadPackage(packageName) {
             var stdout = stds[0];
             return JSON.parse(stdout);
         }).then(function (json) {
-            return bowerJson.parse(json)
-        }).then(function (spec) {
-            var downloads = Object.keys(spec.dependencies).map(function (dependecy) {
+            var downloads = Object.keys(json.dependencies || {}).map(function (dependecy) {
                 return downloadPackage(dependecy);
             });
             downloadPackage.downloaded[packageName] = 'FINISHED';
