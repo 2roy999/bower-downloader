@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+var downloader = require('../lib/bower-downloader');
+
+packageNames = process.argv.slice(2);
+
+downloader(packageNames).finally(function () {
+    process.exit();
+});

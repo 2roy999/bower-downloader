@@ -1,11 +1,7 @@
 {
   "name": "bowerDownloader",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "A package for downloading bower packages for deploying in a offline bower registry  ",
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -13,5 +9,13 @@
     "bower-json": "^0.6.0",
     "bower-registry-client": "^0.3.0",
     "nodegit": "^0.4.1"
-  }
+  },
+  "bin": "bin/bowerDownload"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ]
 }
